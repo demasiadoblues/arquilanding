@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Estudio de Arquitectura</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+</head>
+<body>
+  <header>
+    <h1>Estudio de Arquitectura</h1>
+    <nav>
+      <ul>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <section id="banner">
+    <div class="overlay">
+      <h2>Bienvenido al Estudio de Arquitectura</h2>
+      <p>Expertos en diseño y construcción de espacios innovadores.</p>
+      <a href="#contacto" class="btn">Contáctanos</a>
+    </div>
+  </section>
+  
+  <section id="proyectos">
+    <h2>Proyectos Destacados</h2>
+    <!-- Swiper -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"><img src="imagenes/proyecto1.jpg" alt="Proyecto 1"></div>
+        <div class="swiper-slide"><img src="imagenes/proyecto2.jpg" alt="Proyecto 2"></div>
+        <div class="swiper-slide"><img src="imagenes/proyecto3.jpg" alt="Proyecto 3"></div>
+        <div class="swiper-slide"><img src="imagenes/proyecto4.jpg" alt="Proyecto 4"></div>
+        <div class="swiper-slide"><img src="imagenes/proyecto5.jpg" alt="Proyecto 5"></div>
+        <!-- Añade más slides según sea necesario -->
+      </div>
+      <!-- Paginación -->
+      <div class="swiper-pagination"></div>
+      <!-- Botones de navegación -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </section>
+  
+  <section id="servicios">
+    <h2>Nuestros Servicios</h2>
+    <!-- Aquí puedes agregar información sobre tus servicios -->
+  </section>
+  
+  <section id="contacto">
+    <h2>Contáctanos</h2>
+    <form id="contact-form" action="#">
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="message">Mensaje:</label>
+      <textarea id="message" name="message" required></textarea>
+      
+      <input type="submit" value="Enviar">
+    </form>
+  </section>
+  
+  <footer>
+    <p>&copy; 2023 Estudio de Arquitectura. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- Iniciar Swiper -->
+  <script>
+    const swiper = new Swiper('.swiper-container', {
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+  <script>
+  // JavaScript para desplazamiento suave entre secciones
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+  
+          const target = document.querySelector(this.getAttribute('href'));
+  
+          window.scrollTo({
+              top: target.offsetTop,
+              behavior: 'smooth'
+          });
+      });
+  });
+</script>
+</body>
+</html>
+
